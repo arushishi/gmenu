@@ -1,6 +1,10 @@
 <?php
+
+// set default charset
+ini_set('default_charset', 'UTF-8');
+
 // Bootstrap the framework DO NOT edit this
-require COREPATH.'bootstrap.php';
+require COREPATH . 'bootstrap.php';
 
 \Autoloader::add_classes(array(
 	// Add classes you want to override here
