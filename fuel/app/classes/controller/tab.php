@@ -56,8 +56,8 @@ class Controller_Tab extends Controller_Base
 						'image_hash_off' => Input::post('image_hash_off'),
 						'tab_kind' => Input::post('tab_kind'),
 						'url' => Input::post('url'),
-						'row_no' => Input::post('row_no'),
-						'column_no' => Input::post('column_no'),
+						'row_num' => Input::post('row_num'),
+						'column_num' => Input::post('column_num'),
 						'start_date' => Input::post('start_date'),
 						'end_date' => Input::post('end_date'),
 				));
@@ -105,8 +105,8 @@ class Controller_Tab extends Controller_Base
 			$tab->image_hash_off = Input::post('image_hash_off');
 			$tab->tab_kind = Input::post('tab_kind');
 			$tab->url = Input::post('url');
-			$tab->row_no = Input::post('row_no');
-			$tab->column_no = Input::post('column_no');
+			$tab->row_num = Input::post('row_num');
+			$tab->column_num = Input::post('column_num');
 			$tab->start_date = Input::post('start_date');
 			$tab->end_date = Input::post('end_date');
 
@@ -133,8 +133,8 @@ class Controller_Tab extends Controller_Base
 				$tab->image_hash_off = $val->validated('image_hash_off');
 				$tab->tab_kind = $val->validated('tab_kind');
 				$tab->url = $val->validated('url');
-				$tab->row_no = $val->validated('row_no');
-				$tab->column_no = $val->validated('column_no');
+				$tab->row_num = $val->validated('row_num');
+				$tab->column_num = $val->validated('column_num');
 				$tab->start_date = $val->validated('start_date');
 				$tab->end_date = $val->validated('end_date');
 

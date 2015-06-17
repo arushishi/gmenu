@@ -3,10 +3,44 @@
 class Controller_Item extends Controller_Base
 {
 
-	public function action_index()
+	public function before()
 	{
-		$data['items'] = Model_Item::find('all');
+		parent::before();
+
+		if (Request::active()->controller !== 'Controller_Admin' or ! in_array(Request::active()->action, array('login', 'logout')))
+		{
+			if (Auth::check())
+			{
+				$admin_group_id = Config::get('auth.driver', 'Simpleauth') == 'Ormauth' ? 6 : 100;
+				if (!Auth::member($admin_group_id))
+				{
+					Auth::logout();
+					Session::set_flash('error', e('アクセスが許可されて下りません。システム担当者にお問い合わせください。'));
+					Response::redirect('admin/login'); //ここから
+				}
+			} else
+			{
+				Response::redirect('admin/login');
+			}
+		}
+	}
+
+	public function action_index($tabid = null, $rownum = 0, $columnnum = 0)
+	{
+		if (is_null($tabid) || ($rownum == 0) || ($columnnum == 0))
+		{
+			Response::redirect('tab/index');
+		}
+
+		$data['items'] = Model_Item::find("all", array(
+				'where' => array(array('tab_id', $tabid)),
+				'order_by' => array('item_row', 'item_column')
+		));
+
 		$this->template->title = "Items";
+		$data['tabid'] = $tabid;
+		$data['rownum'] = $rownum;
+		$data['columnnum'] = $columnnum;
 		$this->template->content = View::forge('item/index', $data);
 	}
 

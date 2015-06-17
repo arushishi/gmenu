@@ -31,11 +31,11 @@
 	<strong>Url:</strong>
 	<?php echo $tab->url; ?></p>
 <p>
-	<strong>Row no:</strong>
-	<?php echo $tab->row_no; ?></p>
+	<strong>Row num:</strong>
+	<?php echo $tab->row_num; ?></p>
 <p>
-	<strong>Column no:</strong>
-	<?php echo $tab->column_no; ?></p>
+	<strong>Column num:</strong>
+	<?php echo $tab->column_num; ?></p>
 <p>
 	<strong>Start date:</strong>
 	<?php echo $tab->start_date; ?></p>
@@ -43,5 +43,5 @@
 	<strong>End date:</strong>
 	<?php echo $tab->end_date; ?></p>
 
-<?php echo Html::anchor('tab/edit/'.$tab->id, 'Edit'); ?> |
+<?php echo Html::anchor('tab/edit/' . $tab->id, 'Edit'); ?> |
 <?php echo Html::anchor('tab', 'Back'); ?>

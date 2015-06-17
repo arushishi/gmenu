@@ -32,14 +32,14 @@
 					<!--td><?php echo $item->image_hash_off; ?></td-->
 					<td><?php echo $item->tab_kind; ?></td>
 					<td><?php echo $item->url; ?></td>
-					<td><?php echo $item->row_no; ?></td>
-					<td><?php echo $item->column_no; ?></td>
+					<td><?php echo $item->row_num; ?></td>
+					<td><?php echo $item->column_num; ?></td>
 					<td><?php echo $item->start_date; ?></td>
 					<td><?php echo $item->end_date; ?></td>
 					<td>
 						<div class="btn-toolbar">
 							<div class="btn-group">
-								<?php echo Html::anchor('tab/view/' . $item->id, '<i class="icon-eye-open"></i> 詳細', array('class' => 'btn btn-default btn-sm')); ?>	<?php echo Html::anchor('tab/edit/' . $item->id, '<i class="icon-wrench"></i> 修正', array('class' => 'btn btn-default btn-sm')); ?>	<?php echo Html::anchor('tab/delete/' . $item->id, '<i class="icon-trash icon-white"></i> 削除', array('class' => 'btn btn-sm btn-danger', 'onclick' => "return confirm('Are you sure?')")); ?>	<?php echo $item->tab_kind == "link" ? Html::anchor('item/index/' . $item->id, '<i class="icon-eye-open"></i> アイテム', array('class' => 'btn btn-info btn-sm')) : ""; ?>
+								<?php echo Html::anchor('tab/edit/' . $item->id, '<i class="icon-wrench"></i> 修正', array('class' => 'btn btn-default btn-sm')); ?>	<?php echo Html::anchor('tab/view/' . $item->id, '<i class="icon-eye-open"></i> 追加', array('class' => 'btn btn-default btn-sm')); ?>	<?php echo Html::anchor('tab/delete/' . $item->id, '<i class="icon-trash icon-white"></i> 削除', array('class' => 'btn btn-sm btn-danger', 'onclick' => "return confirm('Are you sure?')")); ?>	<?php echo $item->tab_kind == "link" ? Html::anchor('item/index/' . $item->id . '/' . $item->row_num . '/' . $item->column_num, '<i class="icon-eye-open"></i> アイテム', array('class' => 'btn btn-info btn-sm')) : ""; ?>
 							</div>
 						</div>
 
@@ -48,7 +48,6 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
-
 <?php else: ?>
 	<p>レコードなし</p>
 

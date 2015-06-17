@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Ajax_Tab extends Controller_Rest
+class Controller_Tabajax extends Controller_Rest
 {
 
 	public function post_exec()

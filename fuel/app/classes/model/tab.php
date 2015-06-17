@@ -16,8 +16,8 @@ class Model_Tab extends Model
 		'image_hash_off',
 		'tab_kind',
 		'url',
-		'row_no',
-		'column_no',
+		'row_num',
+		'column_num',
 		'start_date',
 		'end_date',
 		'create_date',
@@ -49,8 +49,8 @@ class Model_Tab extends Model
 		//$val->add_field('image_hash_off', 'Image Hash Off', 'required|max_length[255]');
 		$val->add_field('tab_kind', 'Tab Kind', 'required|max_length[255]');
 		//$val->add_field('url', 'Url', 'required|max_length[255]');
-		//$val->add_field('row_no', 'Row No', 'required|valid_string[numeric]');
-		//$val->add_field('column_no', 'Column No', 'required|valid_string[numeric]');
+		//$val->add_field('row_num', 'Row Num', 'required|valid_string[numeric]');
+		//$val->add_field('column_num', 'Column Num', 'required|valid_string[numeric]');
 		$val->add_field('start_date', 'Start Date', 'required');
 		$val->add_field('end_date', 'End Date', 'required');
 

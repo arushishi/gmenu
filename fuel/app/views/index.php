@@ -25,7 +25,7 @@
                 //alert($("#form_school_id option:selected").text());
                 // ajax処理
                 $.ajax({
-                    url: "./ajax/tab/exec.json",
+                    url: "tabajax/exec.json",
                     type: "POST",
                     data: {schoolid: $("#form_school_id option:selected").val()} //, schoolname: $("#form_school_id option:selected").text()
                 }).done(function (json) {

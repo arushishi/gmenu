@@ -22,7 +22,7 @@
 	<div class="form-group">
 		<?php echo Form::label('Tab name', 'tab_name', array('class' => 'control-label')); ?>
 
-		<?php echo Form::input('tab_name', Input::post('tab_name', isset($tab) ? $tab->tab_name : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab name')); ?>
+		<?php echo Form::input('tab_name', Input::post('tab_name', isset($tab) ? $tab->tab_name : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab name', 'readonly' => 'readonly')); ?>
 
 	</div>
 	<div class="form-group">

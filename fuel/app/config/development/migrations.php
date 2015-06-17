@@ -10,6 +10,7 @@ return array (
         1 => '002_create_tabs',
         2 => '003_create_schoolinfos',
         3 => '004_create_items',
+        4 => '005_create_images',
       ),
     ),
     'module' => 
