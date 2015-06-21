@@ -1,9 +1,10 @@
 <html>
 	<body>
         <form action="./upload/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="upload[]" multiple="true" />
+            <input type="file" name="upload[]" multiple="false" />
             <input type="submit" />
         </form>
+
 		<?php
 		foreach ($files as $file)
 		{
