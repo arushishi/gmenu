@@ -32,8 +32,3 @@ You can not apply for membership. Start by sending in pull-requests, work on out
 feature requests or bugs, and become active in the #fuelphp IRC channel. If your skills
 are up to scratch, we will notice you, and will ask you to become a team member.
 
-### Alumni
-
-* Jelmer Schreuder - Developer ([http://jelmerschreuder.nl/](http://jelmerschreuder.nl/))
-* Phil Sturgeon - Developer ([http://philsturgeon.co.uk](http://philsturgeon.co.uk))
-* Dan Horrigan - Founder, Developer ([http://dhorrigan.com](http://dhorrigan.com))
