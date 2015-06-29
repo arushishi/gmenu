@@ -34,7 +34,7 @@
             //alert(row_col[0]);
             //alert(row_col[1]);
             $.ajax({
-                url: "/fuelphp/itemajax/exec.json",
+                url: "../../../../itemajax/exec.json",
                 type: "POST",
                 data: {tabid: "8", rownum: row_col[0], columnnum: row_col[1]}
             }).done(function (json) {

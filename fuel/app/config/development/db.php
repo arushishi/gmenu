@@ -8,9 +8,9 @@ return array(
 		'connection' => array(
 			'hostname' => 'localhost',
 			'port' => '3306',
-			'database' => 'fuel_dev',
-			'username' => 'root',
-			'password' => 'root',
+			'database' => 'gmenu_dev',
+			'username' => 'gmenu_dev',
+			'password' => 'gmenu_dev',
 		),
 		'profiling' => true,
 	),
