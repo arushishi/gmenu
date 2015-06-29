@@ -38,7 +38,7 @@
     "config": {
         "vendor-dir": "fuel/vendor",
         "github-oauth": {
-          "github.com": "d2d4a5d547bf1a9612c4ce0fa36c64ffc3506dbd"
+          "github.com": "39cbf2a87728cb321903bc59f8e80253ede5008e"
         }
     },
     "extra": {
