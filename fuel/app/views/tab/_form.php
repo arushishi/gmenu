@@ -56,8 +56,8 @@
 		<!--?php echo Form::input('tab_kind', Input::post('tab_kind', isset($tab) ? $tab->tab_kind : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab kind')); ?-->
 		<?php
 		echo Form::select('tab_kind', Input::post('tab_kind', isset($tab) ? $tab->tab_kind : ''), array('' => '',
-			'link' => 'link',
 			'html' => 'html',
+			'link' => 'link',
 			), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab kind')
 		);
 		?>

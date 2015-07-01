@@ -28,14 +28,13 @@
 	<div class="form-group">
 		<?php echo Form::label('Image on', 'image_on', array('class' => 'control-label')); ?>
 
-		<?php echo Form::input('image_on', Input::post('image_on', isset($tab) ? $tab->image_on : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Image on')); ?>
-		<?php echo Form::file('image_on', array('class' => 'col-md-4 form-control', 'placeholder' => 'Image on')); ?>
+		<?php echo Form::select('image_on', (isset($tab) ? $tab->image_on : ''), $imageinfos); ?>
 
 	</div>
 	<div class="form-group">
 		<?php echo Form::label('Image off', 'image_off', array('class' => 'control-label')); ?>
 
-		<?php echo Form::input('image_off', Input::post('image_off', isset($tab) ? $tab->image_off : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Image off')); ?>
+		<?php echo Form::select('image_off', (isset($tab) ? $tab->image_off : ''), $imageinfos); ?>
 
 	</div>
 	<!--div class="form-group">
@@ -55,30 +54,31 @@
 
 		<!--?php echo Form::input('tab_kind', Input::post('tab_kind', isset($tab) ? $tab->tab_kind : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab kind')); ?-->
 		<?php
-		echo Form::select('tab_kind', Input::post('tab_kind', isset($tab) ? $tab->tab_kind : ''), array('' => '',
-			'link' => 'link',
+		//echo Form::select('tab_kind', Input::post('tab_kind', isset($tab) ? $tab->tab_kind : 'html'), array('' => '',
+		echo Form::select('tab_kind', 'html', array('' => '',
 			'html' => 'html',
-			), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab kind')
+			'link' => 'link',
+			), array('class' => 'col-md-4 form-control', 'placeholder' => 'Tab kind', 'id' => 'form_tabkind')
 		);
 		?>
 
 	</div>
-	<div class="form-group">
+	<div class="form-group html_div">
 		<?php echo Form::label('Url', 'url', array('class' => 'control-label')); ?>
 
 		<?php echo Form::input('url', Input::post('url', isset($tab) ? $tab->url : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Url')); ?>
 
 	</div>
-	<div class="form-group">
+	<div class="form-group link_div">
 		<?php echo Form::label('Row num', 'row_num', array('class' => 'control-label')); ?>
 
-		<?php echo Form::input('row_num', Input::post('row_num', isset($tab) ? $tab->row_num : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Row num')); ?>
+		<?php echo Form::input('row_num', Input::post('row_num', isset($tab) ? $tab->row_num : '5'), array('class' => 'col-md-4 form-control', 'placeholder' => 'Row num')); ?>
 
 	</div>
-	<div class="form-group">
+	<div class="form-group link_div">
 		<?php echo Form::label('Column num', 'column_num', array('class' => 'control-label')); ?>
 
-		<?php echo Form::input('column_num', Input::post('column_num', isset($tab) ? $tab->column_num : ''), array('class' => 'col-md-4 form-control', 'placeholder' => 'Column num')); ?>
+		<?php echo Form::input('column_num', Input::post('column_num', isset($tab) ? $tab->column_num : '3'), array('class' => 'col-md-4 form-control', 'placeholder' => 'Column num')); ?>
 
 	</div>
 	<div class="form-group">
@@ -98,3 +98,31 @@
 		<?php echo Form::submit('submit', 'Save', array('class' => 'btn btn-primary')); ?>		</div>
 </fieldset>
 <?php echo Form::close(); ?>
+
+<script type="text/javascript">// <![CDATA[
+    $(document).ready(function () {
+
+        // select選択変更時
+        $('#form_tabkind').change('click', form_change);
+
+        // 再表示などの際に表示する
+        $('#form_tabkind').ready(form_change);
+
+        // formの入力箇所変更
+        function form_change() {
+
+            if ($("#form_tabkind option:selected").val() == "")
+            {
+                $(".html_div").hide();
+                $(".link_div").hide();
+            } else if ($("#form_tabkind option:selected").val() == "html") {
+                $(".html_div").show();
+                $(".link_div").hide();
+            } else {
+                $(".html_div").hide();
+                $(".link_div").show();
+            }
+
+        }
+    });
+    // ]]></script>

@@ -144,7 +144,21 @@ class Controller_Tab extends Controller_Base
 			$this->template->set_global('tab', $tab, false);
 		}
 
-		$this->template->title = "Tabs";
+		// select要素情報収集（DB）
+		$tmp = Model_Image::find("all", array(
+				'where' => array(array('group', 'tab')),
+				'order_by' => array('name')
+		));
+
+		// select要素作成
+		$imageinfos = array(" " => " "); //空要素
+		foreach ($tmp as $value)
+		{
+			$imageinfos += array($value['url'] => $value['name']);
+		}
+		$this->template->set_global('imageinfos', $imageinfos);
+
+		$this->template->title = "タブ情報修正";
 		$this->template->content = View::forge('tab/edit');
 	}
 

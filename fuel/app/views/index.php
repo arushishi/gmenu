@@ -21,11 +21,11 @@
             {
                 // 空行は初めだけ表示したら後は消して選択できないように
                 $('#form_school_id option[value=""]').remove();
-                // alert($("#form_school_id option:selected").val());
+                //alert(window.location.pathname);
                 //alert($("#form_school_id option:selected").text());
                 // ajax処理
                 $.ajax({
-                    url: "../tabajax/exec.json",
+                    url: document.location + "/../tabajax/exec.json",
                     type: "POST",
                     data: {schoolid: $("#form_school_id option:selected").val()} //, schoolname: $("#form_school_id option:selected").text()
                 }).done(function (json) {

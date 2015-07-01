@@ -300,4 +300,6 @@ return array(
 	 */
 	// 'language'  => array(),
 	// ),
+	'image_path' => 'http://localhost/gmenu/image_depo/',
+
 );
